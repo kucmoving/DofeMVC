@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetCafe(Remake)", "PetCafe(Remake)\PetCafe(Remake).csproj", "{E5A4C22C-A0C2-42F6-9E80-AB49F281B2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetCafe(Remake).Tests", "PetCafe(Remake).Tests\PetCafe(Remake).Tests.csproj", "{F72C5F86-F539-4621-B181-9E77EF752A8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5A4C22C-A0C2-42F6-9E80-AB49F281B2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A4C22C-A0C2-42F6-9E80-AB49F281B2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A4C22C-A0C2-42F6-9E80-AB49F281B2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A4C22C-A0C2-42F6-9E80-AB49F281B2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72C5F86-F539-4621-B181-9E77EF752A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72C5F86-F539-4621-B181-9E77EF752A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72C5F86-F539-4621-B181-9E77EF752A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72C5F86-F539-4621-B181-9E77EF752A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FB9A016-E26A-4021-A1C6-7E45E6938445}
+	EndGlobalSection
+EndGlobal

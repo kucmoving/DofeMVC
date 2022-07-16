@@ -1,0 +1,119 @@
+﻿@model HomeViewModel
+@using PetCafe_Remake_.ViewModels
+
+@{
+    ViewData["Title"] = "Dofe";
+}
+
+
+  <!-- ======= Hero Section ======= -->
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="~/img/banner1.jpg" class="d-block w-100" alt="all photos from https://pixabay.com/">
+    </div>
+        <div class="carousel-item">
+      <img src="~/img/banner2.jpg" class="d-block w-100" alt="all photos from https://pixabay.com/">
+    </div>
+        <div class="carousel-item">
+      <img src="~/img/banner3.jpg" class="d-block w-100" alt="all photos from https://pixabay.com/">
+    </div>
+        <div class="carousel-item">
+      <img src="~/img/banner4.jpg" class="d-block w-100" alt="all photos from https://pixabay.com/">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+  <main id="main">
+
+    <!-- ======= My & Family Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h1 >Dofe</h1>
+
+          <h5>Dofe is a coffee shop located in the city center, which serves coffee and tea,
+              in addition to light refreshments such as baked goods or snacks.</h5>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <img src="~/img/dog_coffee.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h5>
+              Not a Cafe Only...It is a place for you...
+            </h5>
+            <ul class="mt-5">
+              <li><i class="ri-check-double-line"></i> To meet friends with different storyies</li>
+              <li><i class="ri-check-double-line"></i> To have a good time with your dogs</li>
+              <li><i class="ri-check-double-line"></i> To participate in our various activities</li>
+            </ul>
+            <div class="btn-group-vertical">
+
+           <a class="btn btn-outline-primary mt-4" asp-controller="Account" asp-action="Register" >Register as a member</a>
+          <a class="btn btn-outline-primary mt-4" asp-controller="Account" asp-action="Register" >View our dogs</a>
+           <a class="btn btn-outline-primary mt-4" asp-controller="Account" asp-action="Register" >Search for a event</a>
+           </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End My & Family Section -->
+<section>
+    <div class="container">
+        @if (Model.Events == null)
+        {
+            <h1 class="fw-light">
+                There are no events in your area! <a asp-area="" asp-controller="Account"
+                                                        asp-action="Login">Login</a> and create one!
+            </h1>
+        }
+        else
+        {
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+                        <h2 >It seems that you are living in @Model.Region and there are some events coming.</h2>
+           @foreach (var item in Model.Events)
+
+              {
+              <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="@item.Image" width="auto" height="auto" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">@item.Region</p>
+                  <p class="card-text">@item.EventName</p>
+                  <p class="card-text">@item.Introduction</p>
+                  <p class="card-text">@item.EventCategory</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+
+                        <a type="btn-success" asp-controller="Dog" asp-action="Detail" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+                               </div>
+                               </div>
+                               </div>}
+</section>
+
+                <!--end of col-->
+    <!-- ======= Features Section ======= -->
+</main><!-- End #main -->

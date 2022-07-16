@@ -1,0 +1,8 @@
+﻿namespace PetCafe_Remake_.Data
+{
+    public static class UserRoles
+    {
+        public const string Admin = "admin";
+        public const string User = "user";
+    }
+}

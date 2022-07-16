@@ -1,0 +1,86 @@
+﻿@model Dog
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Dogs</h2>
+          <ol>
+            <li>Home</a></li>
+            <li>Dogs</li>
+            <li>Detail</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+  
+      <div class="col-md-8">
+        <img class="img-fluid" src="@Model.Image" alt="">
+      </div>
+  
+      <div class="col-md-4">
+        <h3 class="my-3">@Model.DogName</h3>
+        <p>@Model.Introduction</p>
+        <h3 class="my-3">Visit Time</h3>
+        <ul>
+         <li>@Model.VisitTime.Day</li>
+        <li>@Model.VisitTime.TimeFrame</li>
+
+          <li>@Model.DogCategory</li>
+        </ul>
+                   <a class="btn btn-outline-primary" asp-controller="Dog" 
+           asp-action="Index" asp-route-id="@Model.Id">Back</a>  
+      </div>
+  
+    </div>
+    <!-- /.row -->
+  
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Related Projects</h3>
+  
+    <div class="row">
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+    </div>
+    <!-- /.row -->
+  
+  </div>
+  <!-- /.container -->
+

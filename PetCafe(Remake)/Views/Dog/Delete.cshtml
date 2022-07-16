@@ -1,0 +1,57 @@
+﻿@model Dog
+@using PetCafe_Remake_.Models.Data.Enum
+
+<h1>Are you sure you want to delete this club?</h1>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <input type="hidden" value="VisitTimeId" id="VisitTimeId" />
+  <div class="form-group">
+    <label asp-for="DogName">DogName</label>
+    <input asp-for="DogName" class="form-control" placeholder="Ex. Bobby">
+    <span asp-valiadation-for="DogName" class="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for="Introduction">Introduction</label>
+    <input asp-for="Introduction" class="form-control" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
+    <span asp-valiadation-for="Introduction" class="text-danger"></span>
+  </div>
+   <!--select-->
+    <div class="form-group">
+    <label asp-for="DogCategory">Dog category</label>
+    <select asp-for="DogCategory" asp-items="@Html.GetEnumSelectList<DogCategory>()" class="form-control form-control-sm">
+        <option>Select a category</option>
+        </select>
+            <span asp-valiadation-for="DogCategory" class="text-danger"></span>
+
+         </div>
+
+   <!--order table, table.column-->
+  <div class="form-group">
+    <label asp-for="VisitTime.Day">Day to visit</label>
+    <input asp-for="VisitTime.Day" class="form-control" placeholder="Ex. Wednesday">
+    <span asp-valiadation-for="VisitTime" class="text-danger"></span>
+  </div>
+    <div class="form-group">
+    <label asp-for="VisitTime.TimeFrame">Time to visit</label>
+    <input asp-for="VisitTime.TimeFrame" class="form-control" placeholder="Ex. Morning">
+    <span asp-valiadation-for="image" class="text-danger"></span>
+  </div>
+    <div class="form-group">
+    <label asp-for="Image">Dog Image</label>
+    <input asp-for="Image" type="file" class="form-control" placeholder="Ex. Bobby">
+    <span asp-valiadation-for="image" class="text-danger"></span>
+    
+    </div>
+    </form>
+
+    <div class="form-group">
+        <form method="post" asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" value="confirm" class="btn btn-primary">Submit</button>
+        </form>
+     </div>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Event>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Events</h2>
+          <ol>
+            <li>Home</a></li>
+            <li>Events</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Event List Section ======= -->
+    <section id="event-list" class="event-list">
+      <div class="container">
+
+        <div class="row">
+
+              @foreach(var item in Model)
+              {
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="@item.Image" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">@item.EventName</h5>
+                <p>@item.EventTime</p>
+                <p>@item.Region</p>
+                <p class="fst-italic text-center">@item.Introduction</p>
+              </div>
+                                      <a type="btn-success" asp-controller="Event" asp-action="Detail" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin")){
+                        <a type="btn-success" asp-controller="Event" asp-action="Edit" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a type="btn-success" asp-controller="Event" asp-action="Delete" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        }
+
+            </div>
+          </div>
+          }
+
+          </div>
+        </div>
+
+    </section><!-- End Event List Section -->
+
+  </main><!-- End #main -->

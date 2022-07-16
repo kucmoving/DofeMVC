@@ -1,0 +1,92 @@
+﻿@model CreateDogViewModel
+@using PetCafe_Remake_.ViewModels
+@using PetCafe_Remake_.Models.Data.Enum;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Member</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Member</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact-us" class="contact-us">
+      <div class="container">
+                  <div class="section-title">
+          <h1 >Visiting our cafe with your dogs</h1>
+ 
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+              
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+     <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
+                  <div class="row">
+  <div class="col-md-8 form-group">
+  <div class="form-group">
+    <input asp-for="DogName" class="form-control" placeholder="Please enter your dog name(ex. Poppy)">
+    <span asp-valiadation-for="DogName" class="text-danger"></span>
+  </div>
+    </div>
+
+     <!--select-->
+<div class="col-md-8 form-group mt-3">
+    <div class="form-group">
+    <select asp-for="DogCategory" asp-items="@Html.GetEnumSelectList<DogCategory>()" class="form-control form-control-sm">
+        <option>Which category is your dog?</option>
+        </select>
+         </div>
+                  </div>
+
+     <!--order table, table.column-->
+     <div class="col-md-8 form-group">
+
+  <div class="form-group mt-3">
+    <input asp-for="VisitTime.Day" class="form-control" placeholder="When will you visit our cafe? Ex. Wednesday">
+    <span asp-valiadation-for="VisitTime.Day" class="text-danger"></span>
+  </div>
+           </div>
+           <div class="col-md-8 form-group">
+
+    <div class="form-group mt-3">
+    <input asp-for="VisitTime.TimeFrame" class="form-control" placeholder="What timeframe will you visit? Ex. Morning">
+    <span asp-valiadation-for="VisitTime.TimeFrame" class="text-danger"></span>
+  </div>
+             </div>
+
+  </div>
+  <div class="form-group mt-3">
+    <textarea row="4" asp-for="Introduction" class="form-control" placeholder="May you introduce your dog to us?"></textarea>
+    <span asp-valiadation-for="Introduction" class="text-danger"></span>
+  </div>
+      <div class="form-group mt-3">
+    <label asp-for="Image">Image Upload</label>
+    <input asp-for="Image" class="form-control" type="file" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
+    <span asp-valiadation-for="Image" class="text-danger"></span>
+  </div>
+  <div class="form-group pb-5 pt-5 text-center">
+      <input class="btn btn-primary float right" type="submit" value="Create Dog" />
+      <a class="btn btn-outline-secondary" asp-controller="Member" asp-action="Index">Cancel</a>
+  </div>
+</form>
+        </div>
+   </div>
+           </div>
+
+
+      </div>
+    </section><!-- End Contact Us Section -->

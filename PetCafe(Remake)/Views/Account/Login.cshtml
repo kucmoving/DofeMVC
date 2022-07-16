@@ -1,0 +1,118 @@
+﻿@model LoginViewModel
+@using PetCafe_Remake_.ViewModels
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> signInManager
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Login</h2>
+          <ol>
+            <li>Home</a></li>
+            <li>Login</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+<div class="row">
+    <div class="col-md-8 col-sm-10">
+
+        @if(TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>Sorry!</b> - @TempData["Error"]</span>
+            </div>
+        }
+        <div class="row pt-5">
+            <div class="col-md-8 justify-content-center">
+                        <p>
+            <h4>Login to your account</h4>
+        </p>
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group mt-5">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <p style="color:forestgreen">admin email: admin@admin.com </p>
+                        <p style="color:forestgreen">user email: user@user.com </p>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <p style="color:forestgreen">default password: 1234@Qwer.com </p>
+                    </div>
+                    <div class="form-group pt-3 text-center">
+                        <input class="btn btn-outline-primary float right" type="submit" value="Login" />
+                        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Cancel</a>
+                    </div>
+                     <p>
+                         <a asp-action="Register"> Register as a new user?</a>
+                         </p>
+                         <p>
+                             <a asp-action="ForgotPassword"> Forgot your passowrd?</a>
+                             </p>
+                             </form>
+
+
+     @{ 
+        var schemes = await signInManager.GetExternalAuthenticationSchemesAsync();
+        var loginProivders = schemes.ToList();
+    }
+    @if (loginProivders.Count() > 0)
+    {
+    <div class="col-md-12">
+        <section>
+            <h4>Third party login</h4>
+            <p style="color:forestgreen">Clearing cookies or usingnito window for testing.</p>
+            <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" role="form">
+                <div>
+                    <p>
+                        @foreach(var provider in loginProivders)
+                        {
+                            @if (@provider.Name == "Facebook")
+
+                            {
+                                <button type="submit" class="btn btn-primary col-md-12" name="provider" value="@provider.Name" 
+                                    title="Log in using your @provider.Name account">@provider.Name</button>
+                            }
+                            @if (@provider.Name == "Google")
+                            {
+                                <button type="submit" class="btn btn-success col-md-12" name="provider" value="@provider.Name" 
+                                    title="Log in using your @provider.Name account">@provider.Name</button>
+                            }
+                        }
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    }
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

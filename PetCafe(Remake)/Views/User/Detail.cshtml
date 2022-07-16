@@ -1,0 +1,72 @@
+﻿@using PetCafe_Remake_.ViewModels
+@model UserDetailViewModel
+
+
+<div class="main-container">
+    <nav aria-label="breadcrumb" role="navigation" class="bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Runners</a>
+                        </li>
+
+                        <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    </ol>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </nav>
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>@Model.UserName</h2>
+        </div>
+
+        <div class="row content">
+         <div class="col-lg-2 col-md-2"></div>
+          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+            <div class="member text-center">
+              <div class="member-img text-center">
+                <img src="@Model.ProfileImageUrl" width="300" height="300" class="img-fluid align-middle" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 pt-2 pt-lg-0">
+
+            <ul>
+              <li>Gender: </i> @Model.Gender</li>
+              <li>Region :</i> @Model.Region</li>
+              <li>Occupation :</i> @Model.Occupation</li>
+              <li>About Me:</i> @Model.AboutMe</li>
+
+
+            </ul>
+            <p>
+
+           <a class="btn btn-outline-primary" asp-controller="User" 
+           asp-action="Index" asp-route-id="@Model.Id">Back to UserPage</a>  
+           <a class="btn btn-outline-primary" asp-controller="Member" 
+           asp-action="Index" >Back to Member</a>  
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End My & Family Section -->
