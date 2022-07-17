@@ -81,7 +81,7 @@ Others
 
 2. External Api Fetching
 * Connect to an external Api and interact with database 
-https://ipinfo.io/
+[Ipinfo](https://ipinfo.io/)
 
 3. Basic CRUD operation
 * The app allows users to create events, post photo, edit information and delete their items.
