@@ -54,7 +54,8 @@ User will persist loggin because cookies will be stored in the browser until log
 {
     options.ClientId = "";
     options.ClientSecret = "";
-});```
+});
+```
 * input your redirect url in third party platform 
 * Tutorials: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-6.0&tabs=visual-studio
 
