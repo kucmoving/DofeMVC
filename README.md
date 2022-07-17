@@ -34,11 +34,11 @@ This MVC website is built by bootstrap, Asp.net Core, SQL.
 Here are some elements i have learnt after this project:<br>
 
 Authuentication
-1. Role management
+1. Role management<br>
 By using Identity core, we can set the user as a particular role as a simple user, manager or even admin. Although users are in the same page, anonymous 
 are restricted to access information but admin are authorized to edit and delete any events.
 
-2. Third Party Login
+2. Third Party Login<br>
 External login is an user friendly desgin. User can simply use third party to authorize the process but they do not need to enter any password.
 User will persist loggin because cookies will be stored in the browser until logout or clearing cookies. Here are some main process:
 
@@ -59,7 +59,7 @@ User will persist loggin because cookies will be stored in the browser until log
 * input your redirect url in third party platform 
 * Tutorials: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-6.0&tabs=visual-studio
 
-3. Email Confirmation and password reset
+3. Email Confirmation and password reset<br>
 Email Confirmation is another way for user to login easily but you should be care that such emails are generally regarded as junk mails or blocked by some providers.
 Sendgird and mailjet are the platforms that allow developers to add mailing function in thier web application. To do this:
 
@@ -81,6 +81,7 @@ Others
 
 2. External Api Fetching
 * Connect to an external Api and interact with database 
+https://ipinfo.io/
 
 3. Basic CRUD operation
 * The app allows users to create events, post photo, edit information and delete their items.
