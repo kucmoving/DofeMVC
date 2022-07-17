@@ -1,6 +1,7 @@
-<h2>Introduction</h2> 
+Original project record
+[Dofe](https://github.com/kucmoving/PetCafe-Remake-)
 
-  
+<h2>Introduction</h2> 
 
 [Dofe](https://uk-south-free.azurewebsites.net/)<br> is a Virtual Coffee for dog lovers. People can upload their dog's information and access event information hosted by other customers.
 This MVC website is built by bootstrap, Asp.net Core, SQL.
