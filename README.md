@@ -88,7 +88,10 @@ Others
 
 Future Development 
 1. git controlling 
-* I have very basic concept with git control at first and face merge conflict when i am making the project. I should not use ```git push --force``` in some previous folders that results my loss of record. 
+* I have very basic concept with git control at first and face merge conflict when i am making the project. I should not use ```git push --force``` in some previous folders that results my loss of record so i decide to upload a new folder.
+the previous project record
+https://github.com/kucmoving/PetCafe-Remake-
+
 
 2. Adding identity functionality
 * The project can be upgraded by adding the usage of QR Code or Multi-Factor Authentication.
