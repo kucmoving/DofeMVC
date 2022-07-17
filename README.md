@@ -2,6 +2,8 @@
 Dofe is a Virtual Coffee for dog lovers. People can upload their dogs information and access event information that hosted by other customers.
 This MVC website is built by bootstrap, Asp.net Core, SQL.
 
+![image](https://user-images.githubusercontent.com/92262463/179393161-d3ca1d1c-9a5a-403c-aa40-fc8aea4cf34f.png)
+
 <h2>Get started</h2>
 
 1. Clone the project
@@ -42,15 +44,35 @@ User will persist loggin because cookies will be stored in the browser until log
 
 * Install third party packages in Nuget 
 * Sign into the third party platform and put the Oauth ID and secret into program.cs
+```builder.Services.AddAuthentication()
+.AddFacebook(options =>
+{
+    options.AppId = "";
+    options.AppSecret = "";
+})
+.AddGoogle(options =>
+{
+    options.ClientId = "";
+    options.ClientSecret = "";
+});```
 * input your redirect url in third party platform 
 * Tutorials: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-6.0&tabs=visual-studio
 
 3. Email Confirmation and password reset
-Email Confirmation is another way for user to login easily but be care that such emails are generally regarded as junk mails or blocked by some providers.
-Sendgird and mailjet are the platform allow developers to add mailing function in their application. Simply register an account and put the id and secret into appsetting.json 
+Email Confirmation is another way for user to login easily but you should be care that such emails are generally regarded as junk mails or blocked by some providers.
+Sendgird and mailjet are the platforms that allow developers to add mailing function in thier web application. To do this:
 
+* Register an account
 sendgird: https://sendgrid.com/
 mailjet: https://www.mailjet.com/
+
+* Put the id and secret into appsetting.json 
+```
+  "MailJet": {
+    "ApiKey": "",
+    "SecretKey": ""
+  }
+```
 
 Others
 1. Unit testing
@@ -60,8 +82,14 @@ Others
 * Connect to an external Api and interact with database 
 
 3. Basic CRUD operation
-* to build CRUD operation in web application
+* The app allows users to create events, post photo, edit information and delete their items.
 
+Future Development 
+1. git controlling 
+* I have very basic concept with git control at first and face merge conflict when i am making the project. I should not use ```git push --force``` in some previous folder that results my loss of record. 
+
+2. Adding identity functionality
+* The project can be upgrade by adding the usage of QR Code or Multi-Factor Authentication.
 
 
 
