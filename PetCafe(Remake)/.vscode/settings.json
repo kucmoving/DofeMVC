@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f995802f-04d8-4b20-96a6-1f611f575936/microsoft.web/sites/subscriptions/f995802f-04d8-4b20-96a6-1f611f575936/resourceGroups/uk-south-free/providers/Microsoft.Web/sites/TripuppiesClient",
+    "appService.deploySubpath": "dist\\alzo-ng"
+}
