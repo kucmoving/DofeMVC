@@ -1,6 +1,8 @@
-Original project record
-[Dofe1](https://github.com/kucmoving/Dofe-Original-1)
+<h2>Original project record<br>
+[Dofe1](https://github.com/kucmoving/Dofe-Original-1)<br>
 [Dofe2](https://github.com/kucmoving/Dofe-Original-2)
+</h2> 
+
 <h2>Introduction</h2> 
 
 [Dofe](https://uk-south-free.azurewebsites.net/) is a Virtual Coffee for dog lovers. People can upload their dog's information and access event information hosted by other customers.
